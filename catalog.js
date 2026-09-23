@@ -3,10 +3,10 @@ function isValidLoan(daysLate) {
 }
 
 function calculateLateFee(daysLate, ratePerDay) {
-  if(daysLate <= 1){
+  if (daysLate <= 1) {
     return 0;
   }
-  return Math.min(Math.round(daysLate * ratePerDay), 20);
+  return Math.min(Math.max(Math.round(daysLate * ratePerDay), 1), 20);
 }
 
 module.exports = { isValidLoan, calculateLateFee };
